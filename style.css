@@ -1,0 +1,164 @@
+/*Design Responsivo = Nos primórdios do web design, páginas eram criadas para serem visualizadas em um tamanho de tela específico. Se o usuário tivesse uma tela maior ou menor do que o esperado, os resultados iam de barras de rolagem indesejadas, tamanhos de linha excessivamente longos e uso inadequado do espaço. À medida que diferentes tamanhos de tela foram aparecendo, surgiu o conceito de web design responsivo (RWD), um conjunto de práticas que permite que páginas da Web alterem seu layout e aparência para se adequarem a diferentes larguras, resoluções, etc.*/
+
+/* alt + shift + seta para baixo vai duplicar a lina.
+para copiar uma linha inteira, não precisa selecionar toda a linha basta deixar o cursor na linha e copiar e colar
+mobile = móvel
+1ª regra para responsividade é codar para mobile e só depois converter para desktop 
+2ª regra é converter toda unidade fixa que está em PIXEL para RELATIVA ou REM = Root EM.
+Esse EM é uma unidade de medida antiga em máquinas de prensa. A unidade padrão dos navegadores é 16px.
+1rem = 16px e para converter PIXEL em REM, basta dividir a quantidade de pixel que há no FIGMA por 16.
+Ex: 40px / 16px = 2.5rem  60px / 16px = 3.75rem.
+3ª regra é quando há esse elemento <meta name ="viewport" no HTML, então podemos usar no CSS a regra de media queries ou @media para fazer o ajuste do tamanho de nossa tela.
+
+
+*/
+
+/*/////////////////////////// INICIANDO VISUALIZAÇÃO PARA MOBILE /////////////////////////////////////////////////*/
+
+* { /*esse asterixo é para configurar todo meu projeto para essas dimenões*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*box-sizing ou dimensionamento de caixa e border-box ou caixa da borda. 
+    border-box informa ao navegador para considerar qualquer borda e preenchimento nos valores 
+    especificados para a largura e a altura de um elemento. Se você definir a largura de um elemento para 100 pixels, 
+    esses 100 pixels incluirão qualquer borda ou preenchimento adicionado, e a caixa de conteúdo diminuirá para absorver 
+    essa largura extra. Isso normalmente torna muito mais fácil dimensionar elementos. box-sizing: border-boxé o estilo 
+    padrão que os navegadores usam para os elementos <table>, <select>e <button>e para <input>elementos cujo tipo é radio, 
+    checkbox, reset, button, submit, colorou search. */
+}
+
+:root { /* corresponde ao elemento raiz de uma árvore que representa o documento*/
+
+    font-size: 62.5%; /*para não ficarmos divindindo po 16 para encontrar o rem, colocamos o elemento raiz (:root) e definimos o valor
+    para a uidade de medida font-size com 62.5%. Se colocar 100% a unidade de medida padrão que é 16px continuaria com o tamanho de 16px
+    então  62.5% de 16px corresponderá a 10px aí não precisamos mais fazer a divisão por 16 para encontrar o pixel basta dividir por 10
+    (coloca o ponto e o nome rem) Ex: 60px = 6.0rem    48px=4.8rem  354px=35.4rem*/ 
+}
+body {
+    background: #ECE9FD;
+    padding: 6.0rem 2.3rem 6.6rem;
+    font-size: 1.6rem;    
+}
+
+main {
+    border: 1px dashed blue;
+    max-width: 33.0rem;
+    margin: 0 auto;
+    /* max-width define a largura máxima de um elemento. Impede que o valor usado da propriedade se torne maior que o valor especificado por .max-width widthmax-width*/
+}
+
+main p:first-child { /*firs-child ou primeiro filho = representa o primeiro elemento entre um grupo de elementos irmãos
+    então vai ser o primeiro "p" que aparecer no main*/
+    border: 1px solid red;
+    font-family: 'Epilogue', sans-serif;
+    color: #7158EF;
+    letter-spacing: 0.3rem;    
+    text-transform: uppercase;
+    line-height: 3.2rem;
+    margin-bottom: 1.7rem;
+    /* letter-spacing = espaçamento entre caracteres de texto.
+    text-transform = transformação de texto
+    uppercase = É uma palavra-chave que converte todos os caracteres em maiúsculas.
+    lowercase = É uma palavra-chave que converte todos os caracteres em minúsculas.
+    capitalize = É uma palavra-chave que converte a primeira letra de cada palavra em maiúscula.*/
+}
+
+h1 {
+    border: 1px solid red;
+    font-weight: 800;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 2.5rem; 
+    color: #090039;
+    margin-bottom: 1.5rem;
+}
+
+h1 + p { /*estelzar um p que esteja anterior ao h1. A leitura se faz debaixo para cima
+    no html.*/
+    border: 1px solid red;
+    color: rgba(10, 0, 57, 0.64);
+    line-height: 3.2rem;
+    margin-bottom: 3.2rem;
+}
+
+a {
+    border: 1px solid red;
+    font-family: 'Epilogue', sans-serif;
+    color: #090039;
+    text-decoration: none;
+    
+    /*text-decoration: none ou decoração de texto: nenhum serve para remover toda decoração
+    do texto e nesse caso é o sublinhado do texto*/
+}
+a:hover { 
+    color: #7158EF;
+    font-weight: bold;
+
+/*a:hover é uma pseudoclasse CSS corresponde quando o usuário interage com um elemento com um dispositivo apontador, 
+mas não necessariamente o ativa. Geralmente é acionado quando o usuário passa o mouse sobre um elemento com o cursor (ponteiro do mouse).*/
+}
+
+ul{
+    border: 1px solid red;
+    margin-top:7.2rem;
+    list-style: none; /*estou removendo os pontos da lista, removendo os estilos*/
+}
+
+ul li span {
+    font-weight: 800;
+    font-size: 7.2rem;
+    line-height: 8.0rem;
+    letter-spacing: -0.2rem;
+    color: #090039;
+}
+
+ul li {
+    margin-top: 3.2rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    color: #090039;
+    width: 25.7rem;
+    display: flex;  
+    gap: 3.8rem;     
+}
+
+
+/*/////////////////////////// FIM DA VISUALIZAÇÃO PARA MOBILE /////////////////////////////////////////////////*/
+
+/***************CONVERTENDO PARA OUTROS DISPOSITIVOS (DESKTOP, TABLET)*****************************************/
+
+/*Quando há o elemento <meta name ="viewport"... no HTML, então podemos usar no CSS a regra de media queries ou @media
+ para fazer o ajuste do tamanho de nossa tela (para devide, desktop, tablet etc...*/
+
+ /* aplicando o media queries e para visualizar abra o DevTools(inspecionar) e clique no botão toggle device toolbar no formato de tablet e celular */
+
+ @media (min-width: 70rem) {
+    body {
+        padding: 8rem;
+    }
+    main {/*quando o mínido de largura for 700 px ou 70rem e o máximo de largura for de 1021px ou 10.21rem (largura máxima da caixa 
+        MAIN que contêm as duas DIV) faça: */
+        
+        max-width: 102.1rem; /*máximo de largura será de 1021px ou 102.1rem que é a largura máxima da caixa MAIN que 
+        contêm as duas DIV ao chegar nesse max-width ele para de crescer*/        
+        display: flex; /*um ao lado do outro*/
+        gap: 10rem ; /*espaçamento entre as duas DIV(nossotrablaho e lista)*/        
+    }
+
+    .nossotrabalho {
+        border: 2px solid rgb(60, 0, 255);
+        max-width: 48.4rem; /*largura da minha DIV nossotrabalho*/
+    }
+
+    .lista {
+        border: 2px solid rgb(60, 0, 255);
+    }
+    .lista ul li {
+        /*estilizando minha DIV lista*/
+        
+        max-width: 45rem;
+        gap: 5.3rem;
+        align-items: center;        
+    } 
+ }

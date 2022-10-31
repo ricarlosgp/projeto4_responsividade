@@ -1,0 +1,55 @@
+<!--Design Responsivo = Nos primórdios do web design, páginas eram criadas para serem visualizadas em um tamanho de tela específico. Se o usuário tivesse uma tela maior ou menor do que o esperado, os resultados iam de barras de rolagem indesejadas, tamanhos de linha excessivamente longos e uso inadequado do espaço. À medida que diferentes tamanhos de tela foram aparecendo, surgiu o conceito de web design responsivo (RWD), um conjunto de práticas que permite que páginas da Web alterem seu layout e aparência para se adequarem a diferentes larguras, resoluções, etc.-->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--o content dessa meta de name viewport têm valor de largura (width) igual à largura do dispositivo (device-width)
+    e a escala inicial (initial-scale) será igual a 1.0 que não haverá um zoom no inicío. Quando há esse elemento <meta name ="viewport"
+    no HTML, então podemos usar no CSS a regra de media queries ou @media para fazer o ajuste do tamanho de nossa tela-->
+    <title>Introdução à Responsividade</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https: //fonts.googleapis.com/css2? family= Epílogo:wght@800 & display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <main> <!--dentro da main criei duas div para melhor estilizar no css especialmente na parde do @media ou media queries-->
+
+        <div class="nossotrabalho"> 
+            <p>nosso trabalho</p>
+            <h1>Fazemos projetos para mobile e Web</h1>
+        
+            <p>Se você tem uma grande ideia inovadora e que vai transformar vidas,coloque em prática agora com a gente.</p>
+            <a href="#">Saiba Mais</a>
+            <!--a href="#" está linkando a lugar nenhum-->
+
+        </div>
+
+        <div class="lista">
+            <ul>
+                <li><span>1</span>Experiência do usuário</li>
+                <li><span>2</span>Pagamentos no aplicativo</li>
+                <li><span>3</span>Suporte 24h todos os dias</li>
+               <!--alt + shift + seta para baixo vai duplicar a lina-->
+               <!--mobile = móvel e a primeira regra é codar para mobile e só depois para desktop-->
+            </ul> 
+        </div>
+    
+    </main>
+    
+</body>
+</html>
